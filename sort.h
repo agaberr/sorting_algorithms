@@ -28,11 +28,9 @@ typedef struct listint_s
 void print_list(const listint_t *list);
 void print_array(const int *array, size_t size);
 
-/*Additional Functions*/
-void swap(int *a, int *b);
-
 /*Sorting Algorithms*/
 void bubble_sort(int *array, size_t size);
+void selection_sort(int *array, size_t size);
 
 
 

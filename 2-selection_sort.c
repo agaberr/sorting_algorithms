@@ -18,17 +18,17 @@ void swap(int *a, int *b)
 }
 
 /**
-* bubble_sort - Sort array of numbers using bubble sort Algorithm
+* selection_sort - Sort array of numbers using selection sort Algorithm
 * @array: array of numbers
 * @size: size of array
 *
 * Return: None
 */
 
-void bubble_sort(int *array, size_t size)
+void selection_sort(int *array, size_t size)
 {
 
-	size_t i = 0, j;
+	size_t i, j, min_idx;
 
 	if (!array || !size)
 		return;
@@ -39,17 +39,20 @@ void bubble_sort(int *array, size_t size)
 	}
 	else
 	{
-		while (i < size)
+		for (i = 0; i < size; i++)
 		{
-			for (j = 0; j < size - 1; j++)
+			min_idx = i;
+			for (j = i; j < size; j++)
 			{
-				if (array[j + 1] < array[j])
-				{
-					swap(&array[j + 1], &array[j]);
-					print_array(array, size);
-				}
+				if (array[j] < array[min_idx])
+					min_idx = j;
 			}
-			i++;
+			if (min_idx != i)
+			{
+				swap(&array[min_idx], &array[i]);
+				print_array(array, size);
+			}
+
 		}
 	}
 
@@ -63,7 +66,7 @@ int main(void)
 
 	print_array(array, n);
 	printf("\n");
-	bubble_sort(array, n);
+	selection_sort(array, n);
 	printf("\n");
 	print_array(array, n);
 	return (0);
