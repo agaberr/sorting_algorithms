@@ -1,6 +1,9 @@
 #ifndef SORT_H
 #define SORT_H
 
+#include <stdlib.h>
+#include <stdio.h>
+
 typedef short bool;
 #define true 1
 #define false 0
@@ -21,6 +24,15 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+/*Print Functions*/
+void print_list(const listint_t *list);
+void print_array(const int *array, size_t size);
+
+/*Additional Functions*/
+void swap(int *a, int *b);
+
+/*Sorting Algorithms*/
+void bubble_sort(int *array, size_t size);
 
 
 
