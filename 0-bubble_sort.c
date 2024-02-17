@@ -30,7 +30,7 @@ void bubble_sort(int *array, size_t size)
 
 	size_t i = 0, j;
 
-	if (!array || !size)
+	if (!array || size == false)
 		return;
 
 	if (size == 1)
